@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    int i, j, rows, cols;
+
+    printf("Digite o número de matrizes: ");
+    scanf("%d", &rows);
+    printf("Digite o número de colunas da matriz: ");
+    scanf("%d", &cols);
+
+    int matriz[rows][cols];
+
+    printf("Digite os elementos da matriz:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    int matriz_transposta[cols][rows];
+    for (i = 0; i < cols; i++) {
+        for (j = 0; j < rows; j++) {
+            matriz_transposta[i][j] = matriz[j][i];
+        }
+    }
+
+    printf("Matriz transposta:\n");
+    for (i = 0; i < cols; i++) {
+        for (j = 0; j < rows; j++) {
+            printf("%d ", matriz_transposta[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
